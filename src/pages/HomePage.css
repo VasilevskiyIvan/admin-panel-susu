@@ -21,6 +21,12 @@
   margin-top: 50px;
 }
 
+@media (max-width: 1400px) {
+  .hierarchy {
+    padding: 10px;
+  }
+}
+
 @media (max-width: 768px) {
   .hierarchy {
     margin-top: 25px;

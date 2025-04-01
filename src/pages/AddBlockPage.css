@@ -31,5 +31,6 @@
     .add-block-page {
         margin-top: 25px;
         width: calc(100% - 20px);
+        margin-left: 0px;
     }
 }

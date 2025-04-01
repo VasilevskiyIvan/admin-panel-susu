@@ -47,6 +47,12 @@ const HomePage = () => {
     { parent_id: 29, children_id: 218, children_title: "Распознавание образов" },
     { parent_id: 210, children_id: 219, children_title: "Квантовая телепортация" },
     { parent_id: 211, children_id: 220, children_title: "Постквантовая криптография" },
+    { parent_id: 214, children_id: 240, children_title: "Генная инженерия" },
+    { parent_id: 240, children_id: 241, children_title: "Генная инженерия" },
+    { parent_id: 241, children_id: 242, children_title: "Генная инженерия" },
+    { parent_id: 242, children_id: 243, children_title: "Генная инженерия" },
+    { parent_id: 243, children_id: 244, children_title: "Генная инженерия" },
+    { parent_id: 244, children_id: 245, children_title: "Генная инженерия" },
   ]
 
   return (

@@ -1,9 +1,28 @@
-import { memo, useState } from 'react'
+import { memo, useState, useEffect } from 'react'
 import './Hierarchy.css'
+
+const useWindowWidth = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  return windowWidth
+}
 
 const HierarchyItem = memo(({ item, level = 0, hasSibling = false, expandedNodes, toggleNode }) => {
   const [isExpanded, setIsExpanded] = useState(false)
+  const windowWidth = useWindowWidth()
   
+  const getIndent = () => {
+    if (windowWidth < 768) return 20
+    if (windowWidth < 1400) return 30
+    return 40
+  }
+
   const handleClick = () => {
     toggleNode(item.id)
     setIsExpanded(!isExpanded)
@@ -15,7 +34,7 @@ const HierarchyItem = memo(({ item, level = 0, hasSibling = false, expandedNodes
     <div className="hierarchy-item">
       <div 
         className="item-content" 
-        style={{ marginLeft: `${level * 40}px` }}
+        style={{ marginLeft: `${level * getIndent()}px` }}
         onClick={handleClick}
       >
         <div className={`card ${isNodeExpanded ? 'expanded' : ''}`}>

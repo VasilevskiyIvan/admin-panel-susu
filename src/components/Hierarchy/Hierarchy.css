@@ -1,6 +1,6 @@
 .hierarchy-container {
   background: #f8fafc;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 25px;
 }
 
@@ -99,6 +99,9 @@
   transform: rotate(90deg);
 }
 
+.card-title {
+  font-size: 18px;
+}
 /* Анимация для полос при наведении */
 @keyframes slideIn {
   from {
@@ -116,4 +119,17 @@
 
 .card:hover::after {
   animation: slideIn 0.3s 0.1s ease-out;
+}
+
+@media (max-width: 1400px) {
+  .hierarchy-container {
+    padding: 15px;
+  }
+  .card {
+    padding: 0px 15px;
+    height: 40px;
+  }
+  .card-title {
+    font-size: 16px;
+  }
 }
