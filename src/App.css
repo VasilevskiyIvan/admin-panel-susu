@@ -2,6 +2,12 @@
   text-align: center;
 }
 
+.page {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
 .container {
   width: calc(100% - 50px);
   max-width: 1500px;
@@ -15,11 +21,18 @@
 
 
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .container {
-    width: 90%;
+    width: 100%;
+    padding: 20px 5px;
+  }
+  .page {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
+
 @keyframes pulse-red {
   0% { transform: scale(1); }
   50% { transform: scale(1.1); }
