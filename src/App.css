@@ -1,0 +1,27 @@
+#root {
+  text-align: center;
+}
+
+.container {
+  width: calc(100% - 50px);
+  max-width: 1500px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+@media (max-width: 992px) {
+  .container {
+    width: 90%;
+  }
+}
+@keyframes pulse-red {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
