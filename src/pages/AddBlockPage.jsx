@@ -61,7 +61,6 @@ const AddBlockPage = () => {
 
     const handleSaveBlock = async () => {
         try {
-            // 1. Создаем новый блок
             const blockResponse = await fetch('/api/blocks', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -71,7 +70,6 @@ const AddBlockPage = () => {
             if (!blockResponse.ok) throw new Error('Ошибка создания блока')
             const { id: blockId } = await blockResponse.json()
 
-            // 2. Загружаем медиафайлы
             const uploadMedia = async (type, files) => {
                 if (files.length === 0) return
                 const formData = new FormData()
